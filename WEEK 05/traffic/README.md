@@ -1,0 +1,5 @@
+# Traffic Sign Classifier
+
+I chose a convolutional neural network because traffic signs contain local visual patterns such as edges, shapes, and symbols. The model uses two convolution and max-pooling stages, followed by a dense classification layer. Compared with feeding every pixel directly into a dense network, this structure keeps nearby image pixels together while extracting increasingly useful features. The final softmax layer produces a probability for each of the 43 sign categories.
+
+I included dropout before the output layer to reduce overfitting, and used Adam with categorical cross-entropy for training. A shallower network would be faster but may miss useful visual features; adding more convolutional layers could improve recognition but would add computation and may overfit. The `gtsrb` dataset was not present in the extracted project directory during implementation, so I could not compare training runs or report measured accuracy. These choices are a starting architecture to evaluate once the dataset is available.
